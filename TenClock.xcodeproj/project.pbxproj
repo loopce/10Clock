@@ -253,6 +253,7 @@
 					};
 					D8F6E81C1D7745B800E29842 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = S5G8H7F4CQ;
 					};
 				};
 			};
@@ -527,6 +528,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S5G8H7F4CQ;
 				INFOPLIST_FILE = SwiftClock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JD.SwiftClock;
@@ -539,6 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = S5G8H7F4CQ;
 				INFOPLIST_FILE = SwiftClock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JD.SwiftClock;
