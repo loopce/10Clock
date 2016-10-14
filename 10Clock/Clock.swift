@@ -497,13 +497,13 @@ open class TenClock : UIControl{
                 pointMover = nil
             }
         case tailLayer:
-            if (shouldMoveHead) {
+            if (shouldMoveTail) {
             pointMover = pointerMoverProducer({_ in self.tailAngle}, {self.headAngle += 0;self.tailAngle += $0})
                 } else {
                     pointMover = nil
             }
         case pathLayer:
-            if (shouldMoveHead) {
+            if (shouldMoveHead && shouldMoveTail) {
             		pointMover = pointerMoverProducer({ pt in
                 		let x = CGVector(from: self.bounds.center,
                 		                 to:CGPoint(x: prev.x, y: self.layer.bounds.height - prev.y)).theta;
