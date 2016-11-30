@@ -362,8 +362,7 @@ open class TenClock : UIControl{
         //computedTailAngle +=  (headAngle > computedTailAngle ? twoPi : 0)
         let fiveMinIncrements = Int( ((tailAngle - headAngle) / twoPi) * 12 /*hrs*/ * 12 /*5min increments*/)
         titleTextLayer.string = "\(fiveMinIncrements / 12)hr \((fiveMinIncrements % 12) * 5)min"
-        titleTextLayer.position = gradientLayer.center
-
+        titleTextLayer.position = CGPoint(x: gradientLayer.center.x, y: gradientLayer.center.y + 7);
     }
     func tick() -> CAShapeLayer{
         let tick = CAShapeLayer()
