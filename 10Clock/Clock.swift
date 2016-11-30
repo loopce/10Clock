@@ -316,10 +316,22 @@ open class TenClock : UIControl{
         topHeadLayer.size = iSize
         topHeadLayer.fillColor = disabledFormattedColor(headBackgroundColor).cgColor
         topTailLayer.fillColor = disabledFormattedColor(tailBackgroundColor).cgColor
+        if (!shouldMoveHead) {
+            topHeadLayer.fillColor = topHeadLayer.fillColor?.copy(alpha: 0.2)
+        }
+        if (!shouldMoveTail) {
+            topTailLayer.fillColor = topTailLayer.fillColor?.copy(alpha: 0.2)
+        }
         topHeadLayer.sublayers?.forEach({$0.removeFromSuperlayer()})
         topTailLayer.sublayers?.forEach({$0.removeFromSuperlayer()})
-        let stText = tlabel(startTextLabel, color: disabledFormattedColor(headTextColor))
-        let endText = tlabel(endTextLabel,color: disabledFormattedColor(tailTextColor))
+        var stText = tlabel(startTextLabel, color: disabledFormattedColor(headTextColor))
+        var endText = tlabel(endTextLabel,color: disabledFormattedColor(tailTextColor))
+        if (!shouldMoveTail) {
+            stText = tlabel(startTextLabel, color: UIColor.init(white: 0, alpha: 0.3))
+        }
+        if (!shouldMoveHead) {
+            endText = tlabel(endTextLabel,color: UIColor.init(white: 0, alpha: 0.3))
+        }
         stText.position = topTailLayer.center
         endText.position = topHeadLayer.center
         topHeadLayer.addSublayer(endText)
